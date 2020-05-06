@@ -1,0 +1,17 @@
+.header__nav-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav-item {
+    margin-left: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header__nav-item {
+    margin-left: 32px;
+  }
+}

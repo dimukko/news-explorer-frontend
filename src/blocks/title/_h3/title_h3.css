@@ -1,0 +1,12 @@
+.title_h3 {
+  font-size: 22px;
+  line-height: 26px;
+  color: #1a1b22;
+}
+
+@media screen and (min-width: 1440px) {
+  .title_h3 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}

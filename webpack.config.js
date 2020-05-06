@@ -10,10 +10,10 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/pages/index.js', articles: './src/pages/articles/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    filename: './js/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -25,22 +25,56 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          isDev ? { loader: 'style-loader' } : { loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } },
           'css-loader',
           'postcss-loader',
         ],
       },
       {
+        test: /\.(png|jpg|gif|ico|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: './images/[name].[ext]',
+              esModule: false,
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/fonts/[name].[ext]',
+        loader: 'file-loader?name=./vendor/fonts/[name].[ext]&publicPath=../',
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: 'styles/[name].[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -52,12 +86,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/index.html',
+      template: './src/pages/index.html',
       filename: 'index.html',
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: './src/articles/index.html',
+      template: './src/pages/articles/index.html',
       filename: './articles/index.html',
     }),
     new WebpackMd5Hash(),

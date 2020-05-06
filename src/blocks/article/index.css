@@ -1,0 +1,20 @@
+@import url(./article.css);
+
+@import url(./__action-button/article__action-button.css);
+@import url(./__action-button/_not-added-article/article__action-button_not-added-article.css);
+@import url(./__action-button/_added-article/article__action-button_added-article.css);
+@import url(./__action-button/_delete-article/article__action-button_delete-article.css);
+
+@import url(./__action-container/article__action-container.css);
+
+@import url(./__action-description/article__action-description.css);
+@import url(./__action-description/_is-opened/article__action-description_is-opened.css);
+
+@import url(./__date/article__date.css);
+@import url(./__image/article__image.css);
+@import url(./__link/article__link.css);
+@import url(./__source/article__source.css);
+@import url(./__text/article__text.css);
+@import url(./__title/article__title.css);
+@import url(./__description-container/article__description-container.css);
+@import url(./__search-keyword/article__search-keyword.css);

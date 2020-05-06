@@ -1,0 +1,11 @@
+.summary__title {
+  max-width: 330px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .summary__title {
+    margin-bottom: 30px;
+    max-width: 530px;
+  }
+}

@@ -1,0 +1,15 @@
+@import url(./popup.css);
+@import url(./_is-opened/popup_is-opened.css);
+@import url(./__content/popup__content.css);
+@import url(./__close/popup__close.css);
+@import url(./__title/popup__title.css);
+@import url(./__form/popup__form.css);
+@import url(./__input-wrap/popup__input-wrap.css);
+@import url(./__label/popup__label.css);
+@import url(./__input/popup__input.css);
+@import url(./__error-message/popup__error-message.css);
+@import url(./__error-message/_hidden/popup__error-message_hidden.css);
+@import url(./__button/index.css);
+@import url(./__additional-text/popup__additional-text.css);
+@import url(./__link/popup__link.css);
+@import url(./__link/_auth/popup__link_auth.css);

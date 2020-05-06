@@ -1,0 +1,24 @@
+.article__search-keyword {
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
+  border-radius: 10px;
+  margin: 0 auto 0 0;
+  background-color: white;
+  padding: 8px 15px;
+  z-index: 1;
+  max-width: 111px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all .1s ease-in;
+  cursor: pointer;
+  position: relative;
+}
+
+.article__search-keyword:hover {
+  max-width: 140px;
+}

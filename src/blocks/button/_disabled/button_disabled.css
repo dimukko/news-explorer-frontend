@@ -1,0 +1,7 @@
+.button_disabled {
+  pointer-events: none;
+  user-select: none;
+  background: #e6e8eb;
+  color: #b6bcbf;
+  box-shadow: none;
+}

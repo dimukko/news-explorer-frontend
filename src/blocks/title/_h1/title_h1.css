@@ -1,0 +1,12 @@
+.title_h1 {
+  font-size: 36px;
+  line-height: 40px;
+  color: #fff;
+}
+
+@media screen and (min-width: 1440px) {
+  .title_h1 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}

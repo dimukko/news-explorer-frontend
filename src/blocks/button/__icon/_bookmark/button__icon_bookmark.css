@@ -1,0 +1,4 @@
+.button__icon_bookmark {
+  stroke: #b6bcbf;
+  transition: fill .3s ease-out, stroke .3s ease-out;
+}

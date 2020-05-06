@@ -1,0 +1,17 @@
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  flex-grow: 1;
+  order: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__links {
+    flex-direction: row;
+    flex-grow: 0;
+    width: auto;
+    order: 2;
+    margin-left: auto;
+  }
+}

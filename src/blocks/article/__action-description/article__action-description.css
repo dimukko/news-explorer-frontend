@@ -1,0 +1,14 @@
+.article__action-description {
+  box-sizing: border-box;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000;
+  border-radius: 10px;
+  margin: 0 0 0 5px;
+  background-color: white;
+  display: none;
+  padding: 14px 10px;
+  z-index: 1;
+}

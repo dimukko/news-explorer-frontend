@@ -1,0 +1,7 @@
+.header__nav_is-auth .header__nav-item_is-auth {
+  display: flex;
+}
+
+.header__nav_is-auth .header__nav-item_not-auth {
+  display: none;
+}
