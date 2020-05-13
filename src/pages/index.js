@@ -1,6 +1,6 @@
 import './index.css';
 
-const header = document.querySelector('.header');
+/* const header = document.querySelector('.header');
 const popupIn = document.querySelector('#popup-signin');
 const popupUp = document.querySelector('#popup-signup');
 const popupReg = document.querySelector('#popup-registered');
@@ -50,3 +50,16 @@ popupReg.addEventListener('click', (event) => {
     popupReg.classList.remove('popup_is-opened');
   }
 });
+*/
+
+import MainApi from '../js/api/MainApi';
+import MAIN_API_OPTIONS from '../js/constants/main-api';
+
+import dates from '../js/utils/dates';
+
+import NewsApi from '../js/api/NewsApi';
+import NEWS_API_OPTIONS from '../js/constants/news-api';
+
+const mainApi = new MainApi(MAIN_API_OPTIONS);
+
+const newsApi = new NewsApi(NEWS_API_OPTIONS, { dates });
