@@ -42,7 +42,6 @@ export default class PopupReg extends Popup {
     const { mainApi, popupSuccess } = this._dependencies;
 
     const inputValues = this._getInputFormValues(event, email, password, name);
-    console.log(inputValues);
     this._setButtonDisabled();
     this._setInputsDisabled();
 
