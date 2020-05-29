@@ -1,0 +1,17 @@
+.header__toggle {
+  display: none;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  outline: none;
+  z-index: 10;
+}
+
+@media (max-width: 767px) {
+  .header__toggle {
+    display: inline;
+  }
+}

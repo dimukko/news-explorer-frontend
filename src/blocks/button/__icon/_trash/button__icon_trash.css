@@ -1,0 +1,4 @@
+.button__icon_trash {
+  fill: #b6bcbf;
+  transition: fill .3s ease-out;
+}

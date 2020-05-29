@@ -1,0 +1,27 @@
+.author {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 80px;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .author {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .author {
+    align-items: start;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

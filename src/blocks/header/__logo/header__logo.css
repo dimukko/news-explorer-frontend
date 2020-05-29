@@ -1,0 +1,22 @@
+.header__logo {
+  z-index: 3;
+  font-family: 'Roboto Slab', Arial, serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #1a1b22;
+  border: none;
+  text-decoration: none;
+  transition: color .2s linear;
+}
+
+.header__logo:hover {
+  color: #b6bcbf;
+}
+
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    font-size: 20px;
+  }
+}

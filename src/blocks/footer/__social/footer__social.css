@@ -1,0 +1,15 @@
+.footer__social {
+  order: 2;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__social {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer__social {
+    margin-left: 25px;
+  }
+}

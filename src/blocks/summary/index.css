@@ -1,0 +1,5 @@
+@import url(./summary.css);
+@import url(./__title/summary__title.css);
+@import url(./__text/summary__text.css);
+@import url(./__text/_additional/summary__text_additional.css);
+@import url(./__text/_accent/summary__text_accent.css);

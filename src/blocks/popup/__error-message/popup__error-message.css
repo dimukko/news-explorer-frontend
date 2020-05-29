@@ -1,0 +1,9 @@
+.popup__error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+}

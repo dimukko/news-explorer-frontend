@@ -1,0 +1,4 @@
+.header__nav-link_disable {
+  color: #b6bcbf;
+  pointer-events: none;
+}

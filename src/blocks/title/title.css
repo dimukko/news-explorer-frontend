@@ -1,0 +1,7 @@
+.title {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto Slab', Arial, serif;
+  font-weight: 400;
+}

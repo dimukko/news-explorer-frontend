@@ -1,0 +1,9 @@
+.author__title {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 1440px) {
+  .author__title {
+    margin-bottom: 24px;
+  }
+}

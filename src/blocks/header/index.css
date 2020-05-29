@@ -1,0 +1,25 @@
+@import url(./header.css);
+@import url(./_main/header_main.css);
+
+@import url(./__logo/header__logo.css);
+@import url(./__logo/_is-open-menu/header__Logo_is-open-menu.css);
+
+@import url(./__nav/header__nav.css);
+@import url(./__nav/_is-auth/header__nav_is-auth.css);
+@import url(./__nav/_is-open/header__nav_is-open.css);
+
+@import url(./__nav-link/header__nav-link.css);
+@import url(./__nav-link/_active/header__nav-link_active.css);
+@import url(./__nav-link/_disable/header__nav-link_disable.css);
+
+@import url(./__nav-items/header__nav-items.css);
+
+@import url(./__nav-item/header__nav-item.css);
+@import url(./__nav-item/_not-auth/header__nav-item_not-auth.css);
+@import url(./__nav-item/_is-auth/header__nav-item_is-auth.css);
+
+@import url(./__toggle/header__toggle.css);
+@import url(./__toggle/_dark_closed/header__toggle_dark_closed.css);
+@import url(./__toggle/_dark_opened/header__toggle_dark_opened.css);
+@import url(./__toggle/_light_closed/header__toggle_light_closed.css);
+@import url(./__toggle/_light_opened/header__toggle_light_opened.css);

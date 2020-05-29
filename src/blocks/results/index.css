@@ -1,0 +1,10 @@
+@import url(./results.css);
+@import url(./_inner/results_inner.css);
+@import url(./__title/results__title.css);
+@import url(./__items/results__items.css);
+@import url(./__more-button/results__more-button.css);
+@import url(./__loader/results__loader.css);
+@import url(./__additional/results__additional.css);
+@import url(./__additional-title/results__additional-title.css);
+@import url(./__additional-text/results__additional-text.css);
+@import url(./__not-found/results__not-found.css);

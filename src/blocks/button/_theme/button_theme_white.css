@@ -1,0 +1,11 @@
+.button_theme_white {
+  background-color: #fff;
+  border-radius: 80px;
+  color: #1a1b22;
+}
+
+.button_theme_white:hover,
+.button_theme_white:focus,
+.button_theme_white:active {
+  background-color: rgba(0, 0, 0, .05);
+}

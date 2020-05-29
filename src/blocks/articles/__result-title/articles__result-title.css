@@ -1,0 +1,16 @@
+.articles__result-title {
+  margin-top: 0;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 1100px) {
+  .articles__result-title {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .articles__result-title {
+    margin-bottom: 23px;
+  }
+}

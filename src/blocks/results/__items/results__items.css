@@ -1,0 +1,19 @@
+.results__items {
+  display: grid;
+  grid-template-columns: minmax(224px, 400px);
+  grid-gap: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .results__items {
+    grid-template-columns: minmax(224px, 400px) minmax(224px, 400px) minmax(224px, 400px);
+    grid-gap: 8px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .results__items {
+    grid-gap: 16px;
+  }
+}

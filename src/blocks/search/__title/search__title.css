@@ -1,0 +1,22 @@
+.search__title {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  max-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  .search__title {
+    margin-top: 38px;
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .search__title {
+    margin-top: 80px;
+    margin-bottom: 32px;
+    max-width: 80%;
+  }
+}

@@ -1,0 +1,16 @@
+.results__more-button {
+  max-width: 288px;
+  margin: 16px auto 0;
+}
+
+@media screen and (min-width: 768px) {
+  .results__more-button {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .results__more-button {
+    margin-top: 64px;
+  }
+}

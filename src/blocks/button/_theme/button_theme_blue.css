@@ -1,0 +1,15 @@
+.button_theme_blue {
+  background: #2f71e5;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, .2);
+  border-radius: 100px;
+  color: #fff;
+}
+
+.button_theme_blue:hover {
+  background: #347eff;
+}
+
+.button_theme_blue:active,
+.button_theme_blue:focus {
+  background: #2a65cc;
+}
