@@ -3,5 +3,6 @@
 @import url(./__title/search__title.css);
 @import url(./__subtitle/search__subtitle.css);
 @import url(./__controls/search__controls.css);
+@import url(./__error/search__error.css);
 @import url(./__input/search__input.css);
 @import url(./__button/search__button.css);

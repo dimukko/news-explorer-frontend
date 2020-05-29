@@ -1,57 +1,57 @@
 import './index.css';
 
-const header = document.querySelector('.header');
-const popupIn = document.querySelector('#popup-signin');
-const popupUp = document.querySelector('#popup-signup');
-const popupReg = document.querySelector('#popup-registered');
-const navigation = header.querySelector('.header__nav');
-const hamburgerBtn = header.querySelector('#hamburger');
-const link = header.querySelector('.header__logo');
-const loginBtn = header.querySelector('#logout');
+import Auth from '../../js/modules/auth';
 
-header.addEventListener('click', (event) => {
-  if (event.target.closest('#login')) {
-    popupIn.classList.add('popup_is-opened');
-  }
+import MainApi from '../../js/api/MainApi';
+import MAIN_API_OPTIONS from '../../js/constants/main-api';
 
-  if (event.target.closest('#hamburger')) {
-    hamburgerBtn.classList.toggle('header__toggle_light_opened');
-    hamburgerBtn.classList.toggle('header__toggle_light_closed');
-    navigation.classList.toggle('header__nav_is-open');
-    link.classList.toggle('header__logo_is-open-menu');
-    loginBtn.classList.remove('button__icon_black');
-    loginBtn.classList.add('button__icon_white');
-  }
+import dates from '../../js/utils/dates';
 
-  if (event.target.closest('#logout')) {
-    navigation.classList.remove('header__nav_is-auth');
-  }
+import Header from '../../js/modules/header';
+import HEADER_OPTIONS from '../../js/constants/header';
+
+import Results from '../../js/modules/results';
+import RESULTS_OPTIONS from '../../js/constants/results';
+
+import SavedArticles from '../../js/modules/saved-articles';
+import SAVED_OPTIONS from '../../js/constants/saved-articles';
+
+import createArticleInstance from '../../js/utils/article';
+import ARTICLE_OPTIONS from '../../js/constants/article';
+
+import News from '../../js/modules/news';
+import NEWS_CHUNKS from '../../js/constants/news';
+
+
+const news = new News('saved', NEWS_CHUNKS);
+
+const auth = new Auth('saved');
+
+const mainApi = new MainApi(MAIN_API_OPTIONS);
+
+const header = new Header('dark', HEADER_OPTIONS);
+
+const results = new Results('saved', RESULTS_OPTIONS);
+
+const savedArticles = new SavedArticles(SAVED_OPTIONS);
+
+auth.setDependencies({
+  mainApi, header, HEADER_OPTIONS, results, savedArticles,
 });
 
-popupIn.addEventListener('click', (event) => {
-  if (event.target.closest('#popup-close')) {
-    popupIn.classList.remove('popup_is-opened');
-  }
-
-  if (event.target.closest('#signup-button')) {
-    popupIn.classList.remove('popup_is-opened');
-    popupUp.classList.add('popup_is-opened');
-  }
-
-  if (event.target.closest('#signin-button')) {
-    popupIn.classList.remove('popup_is-opened');
-    navigation.classList.add('header__nav_is-auth');
-  }
+results.setDependencies({
+  dates,
+  createArticleInstance,
+  RESULTS_OPTIONS,
+  auth,
+  mainApi,
+  ARTICLE_OPTIONS,
+  savedArticles,
+  news,
 });
 
-popupUp.addEventListener('click', (event) => {
-  if (event.target.closest('#popup-close')) {
-    popupUp.classList.remove('popup_is-opened');
-  }
+savedArticles.setDependencies({
+  mainApi, auth, results,
 });
 
-popupReg.addEventListener('click', (event) => {
-  if (event.target.closest('#popup-close')) {
-    popupReg.classList.remove('popup_is-opened');
-  }
-});
+auth.sendCheckRequest();

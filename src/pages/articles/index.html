@@ -19,168 +19,28 @@
   <div class="root">
 
     <header class="header container root__container">
-      <a href="../" class="header__logo">News Explorer</a>
-      <nav class="header__nav header__nav_is-auth">
-        <ul class="header__nav-items">
-          <li class="header__nav-item">
-            <a href="../" class="header__nav-link">Главная</a>
-          </li>
-          <li class="header__nav-item header__nav-item_is-auth">
-            <a href="./articles" class="header__nav-link header__nav-link_active">Сохранённые статьи</a>
-          </li>
-          <li class="header__nav-item header__nav-item_is-auth">
-            <button type="button" class="button button_theme_outline-dark button__icon button__icon_black" id="logout">Грета</button>
-          </li>
-          <li class="header__nav-item header__nav-item_not-auth">
-            <button type="button" class="button button_theme_outline-dark" id="login">Авторизоваться</button>
-          </li>
-        </ul>
-      </nav>
-      <button type="button" class="header__toggle header__toggle_dark_closed" id="hamburger"></button>
+
     </header>
 
     <main class="root__container">
 
       <section class="summary container">
         <p class="summary__text summary__text_additional">Сохранённые статьи</p>
-        <h2 class="summary__title title title_h2">Грета, у вас 5 сохранённых статей</h2>
-        <p class="summary__text">По ключевым словам:
-          <span class="summary__text summary__text_accent">Природа, Тайга</span> и
-          <span class="summary__text summary__text_accent">2 другим</span>
-        </p>
+        <h2 class="summary__title title title_h2">
+          <span id="user-name"></span><span id="amount-articles">0 сохранённых статей</span>
+        </h2>
+        <p class="summary__text" id="amount-keywords">По ключевым словам:</p>
+          <span class="summary__text summary__text_accent" id="keywords"></span>
+          <span class="summary__text summary__text_accent" id="other-keywords"></span>
       </section>
-
-      <section class="results container">
-        <div class="articles articles_is-opened">
-          <h2 class="articles__result-title title title_h2">Результаты поиска</h2>
-          <div class="article-list">
-            <article class="article">
-              <div class="article__action-container">
-                <p class="article__search-keyword">Природа</p>
-                <p class="article__action-description article__action-description_is-opened">
-                  Убрать из сохранённых
-                </p>
-                <button type="button" class="article__action-button article__action-button_delete-article"></button>
-              </div>
-              <a href="https://yandex.ru" class="article__link" target="_blank">
-                <img src="../<%=require('../../images/image_03.png')%>" alt="Фото к новости" class="article__image">
-                <div class="article__description-container">
-                  <time class="article__date" datetime="2019-08-02">2 августа, 2019</time>
-                  <h4 class="article__title title_h4 title">
-                    Национальное достояние – парки
-                  </h4>
-                  <p class="article__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
-                    парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </p>
-                  <p class="article__source">Дзен</p>
-                </div>
-              </a>
-            </article>
-      
-            <article class="article">
-              <div class="article__action-container">
-                <p class="article__search-keyword">Природа</p>
-                <p class="article__action-description">
-                  Убрать из сохранённых
-                </p>
-                <button type="button" class="article__action-button article__action-button_delete-article"></button>
-              </div>
-              <a href="https://yandex.ru" class="article__link" target="_blank">
-                <img src="../<%=require('../../images/image_04.png')%>" alt="Фото к новости" class="article__image">
-                <div class="article__description-container">
-                  <time class="article__date" datetime="2019-08-02">2 августа, 2019</time>
-                  <h4 class="article__title title_h4 title">
-                    Лесные огоньки: история одной фотографии
-                  </h4>
-                  <p class="article__text">
-                    Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-                    из местных чудес природы.
-                  </p>
-                  <p class="article__source">Афиша</p>
-                </div>
-              </a>
-            </article>
-      
-            <article class="article">
-              <div class="article__action-container">
-                <p class="article__search-keyword">Тайга</p>
-                <p class="article__action-description">
-                  Убрать из сохранённых
-                </p>
-                <button type="button" class="article__action-button article__action-button_delete-article"></button>
-              </div>
-              <a href="https://yandex.ru" class="article__link" target="_blank">
-                <img src="../<%=require('../../images/image_05.png')%>" alt="Фото к новости" class="article__image">
-                <div class="article__description-container">
-                  <time class="article__date" datetime="2019-08-02">2 августа, 2019</time>
-                  <h4 class="article__title title_h4 title">
-                    «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-                  </h4>
-                  <p class="article__text">
-                    Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...
-                  </p>
-                  <p class="article__source">Медиазона</p>
-                </div>
-              </a>
-            </article>
-      
-            <article class="article">
-              <div class="article__action-container">
-                <p class="article__search-keyword">Парки</p>
-                <p class="article__action-description">
-                  Убрать из сохранённых
-                </p>
-                <button type="button" class="article__action-button article__action-button_delete-article"></button>
-              </div>
-              <a href="https://yandex.ru" class="article__link" target="_blank">
-                <img src="../<%=require('../../images/image_01.png')%>" alt="Фото к новости" class="article__image">
-                <div class="article__description-container">
-                  <time class="article__date" datetime="2019-08-02">2 августа, 2019</time>
-                  <h4 class="article__title title_h4 title">
-                    Национальное достояние – парки
-                  </h4>
-                  <p class="article__text">
-                    В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных
-                    парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.
-                  </p>
-                  <p class="article__source">Дзен</p>
-                </div>
-              </a>
-            </article>
-      
-            <article class="article">
-              <div class="article__action-container">
-                <p class="article__search-keyword">Фотография</p>
-                <p class="article__action-description">
-                  Убрать из сохранённых
-                </p>
-                <button type="button" class="article__action-button article__action-button_delete-article"></button>
-              </div>
-              <a href="https://yandex.ru" class="article__link" target="_blank">
-                <img src="../<%=require('../../images/image_02.png')%>" alt="Фото к новости" class="article__image">
-                <div class="article__description-container">
-                  <time class="article__date" datetime="2019-08-02">2 августа, 2019</time>
-                  <h4 class="article__title title_h4 title">
-                    Лесные огоньки: история одной фотографии
-                  </h4>
-                  <p class="article__text">
-                    Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
-                    из местных чудес природы.
-                  </p>
-                  <p class="article__source">Афиша</p>
-                </div>
-              </a>
-            </article>
-          </div>
-          <button type="button" class="results__more-button button button_theme_white">Показать еще</button>
-        </div>
+      <section class="results results_inner container">
+        <div class="results__items"></div>
       </section>
-      
     </main>
 
     <footer class="footer container root__container">
-      <p class="footer__copyright">&copy; 2020 News Explorer, Powered by News API</p>
+      <a href="https://newsapi.org/" target="_blank" class="footer__copyright">&copy; 2020 News Explorer, Powered by
+        News API</a>
       <div class="footer__links">
         <a href="./" class="footer__link">Главная</a>
         <a href="https://praktikum.yandex.ru" class="footer__link">Яндекс.Практикум</a>
@@ -201,6 +61,110 @@
     </footer>
   </div>
 
+  <template id="header-logged-light">
+    <a href="./" class="header__logo">News Explorer</a>
+    <nav class="header__nav">
+      <ul class="header__nav-items">
+        <li class="header__nav-item">
+          <a href="./" class="header__nav-link header__nav-link_active">Главная</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="./articles" class="header__nav-link">Сохранённые статьи</a>
+        </li>
+        <li class="header__nav-item">
+          <button type="button" class="button button_theme_outline-light button__icon button__icon_white"
+            id="logout"></button>
+        </li>
+      </ul>
+    </nav>
+    <button type="button" class="header__toggle header__toggle_light_closed" id="hamburger"></button>
+  </template>
+
+  <template id="header-logged-dark">
+    <a href="../" class="header__logo">News Explorer</a>
+    <nav class="header__nav header__nav_is-auth">
+      <ul class="header__nav-items">
+        <li class="header__nav-item">
+          <a href="../" class="header__nav-link">Главная</a>
+        </li>
+        <li class="header__nav-item header__nav-item_is-auth">
+          <a href="./articles" class="header__nav-link header__nav-link_active">Сохранённые статьи</a>
+        </li>
+        <li class="header__nav-item header__nav-item_is-auth">
+          <button type="button" class="button button_theme_outline-dark button__icon button__icon_black"
+            id="logout"></button>
+        </li>
+      </ul>
+    </nav>
+    <button type="button" class="header__toggle header__toggle_dark_closed" id="hamburger"></button>
+  </template>
+
+  <template id="results">
+    <div class="articles articles_is-opened">
+      <div class="article-list" id="article-block"></div>
+  </template>
+
+  <template id="article">
+    <article class="article">
+      <a href="" class="article__link" target="_blank">
+        <img src="" alt="Фотография к новости" class="article__image">
+        <div class="article__description-container">
+          <time class="article__date" datetime=""></time>
+          <h4 class="article__title title_h4 title"></h4>
+          <p class="article__text"></p>
+          <p class="article__source"></p>
+        </div>
+      </a>
+    </article>
+  </template>
+
+  <template id="saved-articles">
+    <h2 class="summary__title title title_h2">, у вас <span class="saved__count"></span> сохранённых статей</h2>
+  </template>
+
+  <template id="bookmark-notlogged">
+    <div class="article__action-container">
+      <p class="article__search-keyword article__search-keyword_hidden"></p>
+      <p class="article__action-description">Войдите, чтобы сохранять статьи</p>
+      <button class="article__action-button article__action-button_not-added-article"></button>
+    </div>
+  </template>
+
+  <template id="bookmark-logged">
+    <div class="article__action-container">
+      <p class="article__search-keyword article__search-keyword_hidden"></p>
+      <button type="button" class="article__action-button article__action-button_not-added-article"></button>
+    </div>
+  </template>
+
+  <template id="bookmark-saved">
+    <div class="article__action-container">
+      <p class="article__search-keyword article__search-keyword_hidden"></p>
+      <p class="article__action-description">
+        Убрать из сохранённых
+      </p>
+      <button type="button" class="article__action-button article__action-button_delete-article"></button>
+    </div>
+  </template>
+
+  <template id="show-more">
+    <button class="results__more-button button button_theme_white">Показать еще</button>
+  </template>
+
+  <template id="not-found">
+    <div class="results__additional">
+      <img src="<%=require('../../images/not-found.svg')%>" alt="Ничего не найдено" class="results__not-found" />
+      <h4 class="results__additional-title title title_h4">Ничего не найдено</h4>
+      <p class="results__additional-text">У вас нет сохранённых статей</p>
+    </div>
+  </template>
+
+  <template id="loader">
+    <div class="results__additional">
+      <div class="results__loader loader"></div>
+      <p class="results__additional-text">Идет поиск новостей...</p>
+    </div>
+  </template>
 
   <script src="<%=htmlWebpackPlugin.files.chunks.articles.entry %>"></script>
 </body>

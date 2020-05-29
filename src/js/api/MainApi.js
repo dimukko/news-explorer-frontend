@@ -8,7 +8,7 @@ export default class MainApi {
     this.getArticles = this.getArticles.bind(this);
   }
 
-  signup({ email, password, name }) {
+  signup([email, password, name]) {
     return fetch(this._apiOptions.routes.signup, {
       method: 'POST',
       credentials: 'include',
@@ -21,7 +21,7 @@ export default class MainApi {
     }).catch((err) => new Error(err.message));
   }
 
-  signin({ email, password }) {
+  signin([email, password]) {
     return fetch(this._apiOptions.routes.signin, {
       method: 'POST',
       credentials: 'include',
@@ -47,7 +47,7 @@ export default class MainApi {
     })
       .then((res) => {
         if (res.status !== 200) {
-          throw new Error('Unauthorized');
+          throw new Error('Unauthorized!');
         }
         return res.json();
       })

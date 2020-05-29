@@ -1,2 +1,5 @@
-.button__icon {
+.button__icon::after {
+  content: url(../../../images/logout-light.svg);
+  margin: 6px 0px 0px 12px;
+  z-index: 10;
 }

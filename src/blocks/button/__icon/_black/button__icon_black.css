@@ -1,5 +1,3 @@
 .button__icon_black::after {
-  margin: 6px 0px 0px 12px;
   content: url(../../../../images/logout-dark.svg);
-  z-index: 10;
 }

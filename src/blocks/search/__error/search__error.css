@@ -1,0 +1,37 @@
+.search__error {
+  font-family: Inter, arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #ffffff;
+
+  padding: 0;
+  margin: 0 0 0 0;
+
+  position: absolute;
+  top: 74px;
+  right: 190px;
+  z-index: 99;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 991px) {
+  .search__error {
+    right: 190px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .search__error {
+    top: -25px;
+    right: 100px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .search__error {
+    right: 50px;
+  }
+}
