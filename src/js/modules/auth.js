@@ -26,9 +26,8 @@ export default class Auth {
           throw new Error(res.message);
         }
       })
-      .catch((err) => {
+      .catch(() => {
         renderError();
-        this._setError('page', err.message);
       });
   }
 
