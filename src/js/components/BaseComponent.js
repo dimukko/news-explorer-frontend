@@ -106,7 +106,7 @@ export default class BaseComponent {
     } else if (section === 'page') {
       errorField = document.querySelector('.results__additional-text');
     }
-    if (err === 'Failed to fetch' && errorField) {
+    if (err.includes('fetch') && errorField) {
       errorField.textContent = connectionLost;
     } else if (errorField) {
       const errRus = err.replace(/[^а-яА-ЯёЁ0-9,.\s]?/g, '');
