@@ -18,3 +18,4 @@
 @import url(./__title/article__title.css);
 @import url(./__description-container/article__description-container.css);
 @import url(./__search-keyword/article__search-keyword.css);
+@import url(./__search-keyword/_hidden/article__search-keyword_hidden.css);

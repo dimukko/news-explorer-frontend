@@ -1,5 +1,6 @@
 @import url(./results.css);
 @import url(./_inner/results_inner.css);
+@import url(./_visible/results_visible.css);
 @import url(./__title/results__title.css);
 @import url(./__items/results__items.css);
 @import url(./__more-button/results__more-button.css);

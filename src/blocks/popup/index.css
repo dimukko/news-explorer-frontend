@@ -8,6 +8,7 @@
 @import url(./__label/popup__label.css);
 @import url(./__input/popup__input.css);
 @import url(./__error-message/popup__error-message.css);
+@import url(./__error-message/_server/popup__error-message_server.css);
 @import url(./__error-message/_hidden/popup__error-message_hidden.css);
 @import url(./__button/index.css);
 @import url(./__additional-text/popup__additional-text.css);

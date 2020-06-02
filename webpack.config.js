@@ -38,7 +38,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: './images/[name].[ext]',
+              name: 'images/[name].[ext]',
+              publicPath: '../',
               esModule: false,
             },
           },
@@ -58,9 +59,6 @@ module.exports = {
               },
               gifsicle: {
                 interlaced: false,
-              },
-              webp: {
-                quality: 75,
               },
             },
           },

@@ -2,7 +2,7 @@
   display: block;
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1040px) {
   .article__action-description.article__action-description_is-opened {
     display: none;
   }
