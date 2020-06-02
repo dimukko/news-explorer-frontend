@@ -109,7 +109,8 @@ export default class BaseComponent {
     if (err === 'Failed to fetch' && errorField) {
       errorField.textContent = connectionLost;
     } else if (errorField) {
-      errorField.textContent = `${err.match(/[а-яА-ЯёЁ0-9]+\s?/g).join(' ')}`;
+      const errRus = err.replace(/[^а-яА-ЯёЁ0-9,.\s]?/g, '');
+      errorField.textContent = `${errRus}`;
     } else {
       console.log(err);
     }

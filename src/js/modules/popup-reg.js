@@ -62,12 +62,12 @@ export default class PopupReg extends Popup {
   }
 
   setHandlers() {
-    const { subButtonLinkAuth, password } = this._elements;
+    const { subButtonLinkAuth, form } = this._elements;
     const { popupAuth } = this._dependencies;
 
     this._setHandlers(subButtonLinkAuth, [this.close], 'click');
     this._setHandlers(subButtonLinkAuth, [popupAuth.open.bind(popupAuth)], 'click');
-    this._setHandlers(password, [this.removeFormErrors.bind(this)], 'input');
+    this._setHandlers(form, [this.removeFormErrors.bind(this)], 'input');
     this._mountLocalHandlers([
       { element: this._container, handlers: [this._validateSignupForm], event: 'input' },
       { element: this._container, handlers: [this.submit.bind(this)], event: 'submit' }]);
