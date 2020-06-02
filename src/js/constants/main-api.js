@@ -1,4 +1,4 @@
-const MAIN_API_URL = 'https://api.dimukko.ml';
+const MAIN_API_URL = 'http://api.dimukko.ml';
 
 const MAIN_API_OPTIONS = {
   headers: {
