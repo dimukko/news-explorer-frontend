@@ -69,7 +69,7 @@ search.setDependencies({
 });
 
 results.setDependencies({
-  news, dates, createArticleInstance, ARTICLE_OPTIONS, auth, mainApi,
+  news, dates, createArticleInstance, ARTICLE_OPTIONS, auth, mainApi, FORM_ERRORS,
 });
 
 popupAuth.setDependencies({

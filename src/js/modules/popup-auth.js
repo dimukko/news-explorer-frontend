@@ -48,34 +48,27 @@ export default class PopupAuth extends Popup {
     mainApi
       .signin(inputValues)
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === '200') {
           const { auth } = this._dependencies;
           auth.sendCheckRequest();
           this.close();
-        } else if (res.status === 400) {
-          throw new Error('400');
-        } else if (res.status === 401) {
-          throw new Error('401');
-        } else if (res.status === 500) {
-          throw new Error('500');
         } else {
-          throw new Error('666');
+          throw new Error(res.message);
         }
       })
       .catch((err) => {
-        this._setServerError(err.message);
+        this._setError('popup', err.message);
         this._setInputsActive();
-        this._setButtonActive();
       });
   }
 
   setHandlers() {
-    const { subButtonLinkReg, email } = this._elements;
+    const { subButtonLinkReg, password } = this._elements;
     const { popupReg } = this._dependencies;
 
     this._setHandlers(subButtonLinkReg, [this.close], 'click');
     this._setHandlers(subButtonLinkReg, [popupReg.open.bind(popupReg)], 'click');
-    this._setHandlers(email, [this.removeFormErrors.bind(this)], 'input');
+    this._setHandlers(password, [this.removeFormErrors.bind(this)], 'input');
     this._mountLocalHandlers([
       { element: this._container, handlers: [this._validateSigninForm], event: 'input' },
       { element: this._container, handlers: [this.submit.bind(this)], event: 'submit' }]);

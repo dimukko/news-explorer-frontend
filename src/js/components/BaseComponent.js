@@ -93,4 +93,25 @@ export default class BaseComponent {
       this._mounts = [];
     }
   }
+
+  /* *
+  * Устанавливает ошибку в зависимости от типа секции
+  * */
+  _setError(section, err) {
+    let errorField;
+    const { connectionLost } = this._dependencies.FORM_ERRORS.errors;
+
+    if (section === 'popup') {
+      errorField = this._container.querySelector(this._elements.form).querySelector('#error-server');
+    } else if (section === 'page') {
+      errorField = document.querySelector('.results__additional-text');
+    }
+    if (err === 'Failed to fetch' && errorField) {
+      errorField.textContent = connectionLost;
+    } else if (errorField) {
+      errorField.textContent = `${err.match(/[а-яА-ЯёЁ0-9]+\s?/g).join(' ')}`;
+    } else {
+      console.log(err);
+    }
+  }
 }

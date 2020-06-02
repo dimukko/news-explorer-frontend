@@ -18,7 +18,7 @@ export default class MainApi {
         password,
         name,
       }),
-    }).catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   signin([email, password]) {
@@ -30,36 +30,28 @@ export default class MainApi {
         email,
         password,
       }),
-    }).catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   logout() {
     return fetch(this._apiOptions.routes.logout, {
       method: 'POST',
       credentials: 'include',
-    }).catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   getUserData() {
     return fetch(this._apiOptions.routes.getUserData, {
       method: 'GET',
       credentials: 'include',
-    })
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error('Unauthorized!');
-        }
-        return res.json();
-      })
-      .catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   getArticles() {
     return fetch(this._apiOptions.routes.articles, {
       method: 'GET',
       credentials: 'include',
-    }).then((res) => res.json())
-      .catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   createArticle({
@@ -78,8 +70,7 @@ export default class MainApi {
         link,
         image,
       }),
-    }).then((res) => res.json())
-      .catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 
   removeArticle(articleId) {
@@ -87,7 +78,6 @@ export default class MainApi {
       method: 'DELETE',
       credentials: 'include',
       headers: this._apiOptions.headers,
-    }).then((res) => res.json())
-      .catch((err) => new Error(err.message));
+    }).then((res) => res.json());
   }
 }

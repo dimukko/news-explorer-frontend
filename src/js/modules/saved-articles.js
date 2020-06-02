@@ -39,6 +39,7 @@ export default class SavedArticles extends BaseComponent {
   * */
   getUserArticles() {
     const { mainApi } = this._dependencies;
+    const { renderError } = this._dependencies.results;
     // this._userName = auth.getUserName();
     mainApi
       .getArticles()
@@ -48,7 +49,10 @@ export default class SavedArticles extends BaseComponent {
         this._updateNumberContainer(this._articles);
         this._updateKeywordContainer(this._articles);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        renderError();
+        this._setError('page', err.message);
+      });
   }
 
   /* *

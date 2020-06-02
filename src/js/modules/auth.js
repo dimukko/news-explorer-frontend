@@ -16,14 +16,20 @@ export default class Auth {
   * */
   userLogout() {
     const { logout } = this._dependencies.mainApi;
+    const { renderError } = this._dependencies.results;
 
     logout()
       .then((res) => {
-        if (res.status === 200) {
+        if (res.status === '200') {
           this._setUnauthorizedComponents();
+        } else {
+          throw new Error(res.message);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        renderError();
+        this._setError('page', err.message);
+      });
   }
 
   getUserAuthStatus() {
@@ -99,7 +105,7 @@ export default class Auth {
           this._userName = res.info.name;
           this._setAuthorizedComponents();
         } else {
-          throw new Error('Unauthorized');
+          throw new Error(res.message);
         }
       })
       .catch(() => {

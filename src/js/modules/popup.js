@@ -39,7 +39,8 @@ export default class Popup extends Form {
     this._container.appendChild(this._createPopup());
     this._mountLocalHandlers([
       { element: this._elements.closeElement, handlers: [this.close], event: 'click' },
-      { element: document, handlers: [this._checkUserEvents], event: 'keydown' }]);
+      { element: document, handlers: [this._checkUserEvents], event: 'keydown' },
+      { element: this._container, handlers: [this._checkUserEvents], event: 'mousedown' }]);
   }
 
   removeFormErrors() {
@@ -52,7 +53,7 @@ export default class Popup extends Form {
   }
 
   _checkUserEvents(event) {
-    if (event.key === 'Escape' || event.target.classList.contains('popup_is-opened')) {
+    if (event.key === 'Escape' || event.target.classList.contains('popup')) {
       this.close();
     }
   }

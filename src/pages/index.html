@@ -50,7 +50,7 @@
             Мне очень нравится курица с картошкой в духовке и водить свой автомобиль.
           </p>
           <p class="author__text">
-            Обучение моё проходило в Яндекс.Практикуме, где были заложены основы и принципы веб-разработки,
+            Обучение моё проходило в Яндекс.Практикуме, где мне объяснили основы и принципы веб-разработки,
             с учётом современных требований и пожеланий со стороны заказчиков и пользователей.
             Узнал и научился применять HTML, CSS, JS, освоил Node.js, поднял сервер на Express.js
             и даже подключил его к MongoDB на выделенном сервере с собственным адресом в сети Интернет!
@@ -130,6 +130,14 @@
       <img src="<%=require('../images/not-found.svg')%>" alt="Ничего не найдено" class="results__not-found" />
       <h4 class="results__additional-title title title_h4">Ничего не найдено</h4>
       <p class="results__additional-text">К сожалению по вашему запросу ничего не найдено.</p>
+    </div>
+  </template>
+
+  <template id="results-error">
+    <div class="results__additional">
+      <img src="<%=require('../images/not-found.svg')%>" alt="Произошла ошибка" class="results__not-found" />
+      <h2 class="results__additional-title title title_h4">Во время запроса произошла ошибка.</h2>
+      <p class="results__additional-text"></p>
     </div>
   </template>
 

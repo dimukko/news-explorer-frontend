@@ -205,13 +205,16 @@ export default class Results extends BaseComponent {
     createArticle(props)
       .then((res) => {
         if (!res.data.id) {
-          throw new Error('500');
+          throw new Error(res.message);
         }
         return res.data.id;
       })
       .then((serverId) => this._addArticleServerId(articleId, serverId))
       .then(() => instance.setBookmarkMarked())
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.renderError();
+        this._setError('page', err.message);
+      });
   }
 
   /* *
@@ -225,7 +228,7 @@ export default class Results extends BaseComponent {
 
     removeArticle(serverId)
       .then((res) => {
-        if (!res.status === '200') {
+        if (res.status !== '200') {
           throw new Error(res.message);
         }
       })
@@ -239,7 +242,10 @@ export default class Results extends BaseComponent {
           instance.removeBookmarkMarked();
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.renderError();
+        this._setError('page', err.message);
+      });
   }
 
   /* *
@@ -326,7 +332,10 @@ export default class Results extends BaseComponent {
       .then(() => {
         this._addBookmarkHandlers();
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.renderError();
+        this._setError('page', err.message);
+      });
   }
 
 
@@ -351,7 +360,10 @@ export default class Results extends BaseComponent {
         .then(() => this._renderShowMoreButton())
         .then(() => this._renderArticles())
         .then(() => this._addBookmarkHandlers())
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          this.renderError();
+          this._setError('page', err.message);
+        });
     }
   }
 }

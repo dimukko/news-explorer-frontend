@@ -159,6 +159,14 @@
     </div>
   </template>
 
+  <template id="results-error">
+    <div class="results__additional">
+      <img src="<%=require('../../images/not-found.svg')%>" alt="Произошла ошибка" class="results__not-found" />
+      <h2 class="results__additional-title title title_h4">Во время запроса произошла ошибка</h2>
+      <p class="results__additional-text">Возможно, проблема с соединением или сервер недоступен</p>
+    </div>
+  </template>
+
   <template id="loader">
     <div class="results__additional">
       <div class="results__loader loader"></div>

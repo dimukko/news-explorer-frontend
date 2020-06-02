@@ -16,7 +16,6 @@ export default class NewsApi {
     return fetch(
       `${url}q=${query}&from=${dateFrom}&to=${dateTo}&sortBy=${sortBy}&pageSize=${pageSize}&apiKey=${apiKey}`,
     )
-      .then((res) => res.json())
-      .catch((err) => new Error(err.message));
+      .then((res) => res.json());
   }
 }

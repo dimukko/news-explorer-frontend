@@ -37,21 +37,22 @@ export default class Search extends Form {
       results.renderLoader();
 
       newsApi.getNews(searchQuery)
-        .then((resp) => {
-          if (resp.status === 'ok' && resp.articles.length > 0) {
-            results.initialResults(resp.articles, searchQuery);
-          } else if (resp.status === 'ok' && resp.articles.length <= 0) {
+        .then((res) => {
+          if (res.status === 'ok' && res.articles.length > 0) {
+            results.initialResults(res.articles, searchQuery);
+          } else if (res.status === 'ok' && res.articles.length <= 0) {
             results.renderNotFound();
           } else {
-            throw new Error('500');
+            throw new Error(res.message);
           }
         })
         .then(() => {
           this._setButtonActive();
           this._setInputsActive();
         })
-        .catch(() => {
+        .catch((err) => {
           results.renderError();
+          this._setError('page', err.message);
           this._setButtonActive();
           this._setInputsActive();
         });

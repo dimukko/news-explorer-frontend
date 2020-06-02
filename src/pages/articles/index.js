@@ -22,6 +22,7 @@ import ARTICLE_OPTIONS from '../../js/constants/article';
 import News from '../../js/modules/news';
 import NEWS_CHUNKS from '../../js/constants/news';
 
+import FORM_ERRORS from '../../js/constants/errors';
 
 const news = new News('saved', NEWS_CHUNKS);
 
@@ -48,6 +49,7 @@ results.setDependencies({
   ARTICLE_OPTIONS,
   savedArticles,
   news,
+  FORM_ERRORS,
 });
 
 savedArticles.setDependencies({

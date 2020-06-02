@@ -5,36 +5,10 @@ export default class Form extends BaseComponent {
     return this._container.querySelector(this._elements.form);
   }
 
-  /* *
-   * Устанавливает ошибку в попап
-  * */
-  _setServerError(errorStatus) {
-    const errorField = this._container.querySelector(this._elements.form).querySelector('#error-server');
-
-    const {
-      badRequest, wrongEmailOrPassword, conflict, serverError, connectionLost,
-    } = this._dependencies.FORM_ERRORS.errors;
-
-    if (errorStatus === '400') {
-      errorField.textContent = badRequest;
-    } else if (errorStatus === '401') {
-      errorField.textContent = wrongEmailOrPassword;
-    } else if (errorStatus === '409') {
-      errorField.textContent = conflict;
-    } else if (errorStatus === '500') {
-      errorField.textContent = serverError;
-    } else if (errorStatus === '666') {
-      errorField.textContent = connectionLost;
-    } else {
-      errorField.textContent = '';
-    }
-  }
-
   _setInputsDisabled() {
     const formInputs = this._currentFormElement().querySelectorAll('input');
     formInputs.forEach((input) => {
       input.setAttribute('disabled', true);
-      input.value = '';
     });
   }
 
@@ -43,6 +17,9 @@ export default class Form extends BaseComponent {
 
     formInputs.forEach((input) => {
       input.removeAttribute('disabled');
+      if (input.name === 'password') {
+        input.value = '';
+      }
     });
   }
 
